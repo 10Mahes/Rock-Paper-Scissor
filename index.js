@@ -7,21 +7,21 @@ const user = document.querySelector("#user-score");
 const comp = document.querySelector("#comp-score");
 
 //computer choice
-
 const computerChoice = () => {
   const option = ["rock", "paper", "scissors"];
   const randIndex = Math.floor(Math.random() * option.length);
   return option[randIndex];
 }
 
+// draw function
 const drawGame = () => {
-  // console.log("game was draw");
   user.innerText = userScore;
   comp.innerText = compScore;
   message.style.backgroundColor = "green";
   message.innerText = " Game was Draw. Play Again ";
 }
 
+// winner function
 const showWinner = (userWin, userChoice ,compChoice) => {
   if (userWin) {
     user.innerText = ++userScore;
@@ -36,6 +36,7 @@ const showWinner = (userWin, userChoice ,compChoice) => {
   }
 }
 
+// Main logic 
 const game = (userChoice) => {
   console.log("user", userChoice);
   const compChoice = computerChoice();
@@ -62,6 +63,7 @@ const game = (userChoice) => {
   }
 }
 
+// User Choice
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
     const userChoice = e.target.id;
